@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 public class TrieTests {
 
-    private class MockData {}
+    /*private class MockData {}
 
     @Test
     void emptyTrie() {
@@ -242,5 +242,5 @@ public class TrieTests {
 
         assertNotNull(suggestions);
         assertFalse(suggestions.isEmpty());
-    }
+    }*/
 }
