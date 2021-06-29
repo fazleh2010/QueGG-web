@@ -14,16 +14,18 @@ docker run -p "8089:8089" -e "QUEGG_ALLOW_UPLOADS=true" agsc/quegg-web:latest
 Go to http://localhost:8089/quegg/ and the interface will be shown on your browser. It will initially be empty, a minimal example to get data into the running instance would be:
 
 ### Add questions to the QA system
-3. 
-a) Download the file containing lexical entries. The file [nounppframe](https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv) contains an example of lexical entry.  
+3. Download the file containing lexical entries. The file [nounppframe](https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv) contains an example of lexical entry.  
 ```
 wget -O nounppframe.csv https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv
 ```
-b) Post the file to QA system. And questions will appear in the QA system.
+Post the file to QA system. 
 ```
 curl -X "POST" -F "file=@nounppframe.csv" "http://localhost:8089/quegg/import"      
 ```
-4. To add more questions do the followings:
+### Test the question
+Go to the http://localhost:8089/quegg/. 
+[<img src="https://github.com/fazleh2010/term-a-llod-demo/blob/master/term-a-llod.png" width="50%">]
+### Add  more questions to the QA system
    a) add lexical entries at[Google XSL sheet](https://docs.google.com/spreadsheets/d/1NgH7GdFcAqQuYU3ziIXpq0Yybt4lZIR15DpPgaoXF4M/edit?usp=sharing). The guideline of writing a lexical entry for a grammar type can be seen [here](https://scdemo.techfak.uni-bielefeld.de/qahackathon/tutorial/coverage.php#id4). 
    b) Download the Google XSL sheet as csv. File>Download>Comma-seperated values(.csv, currentsheet).
    c) repeat the step 3.
