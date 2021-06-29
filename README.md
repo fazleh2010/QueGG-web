@@ -1,7 +1,7 @@
 # Run QA system on your machine
 This page provides instructions on how to run the QA system on your machine and add questions to it. The link of hackathon can be found [here](https://scdemo.techfak.uni-bielefeld.de/qahackathon/index.php/)
 
-### Install QA system on your machine
+### Install QA system
 Install docker (https://docs.docker.com/engine/install/)
 1. Download the image of QA system. 
 ```
@@ -11,14 +11,15 @@ docker pull agsc/quegg-web:latest
 ```
 docker run -p "8089:8089" -e "QUEGG_ALLOW_UPLOADS=true" agsc/quegg-web:latest
 ```
-Go to http://localhost:8089/quegg/ and the interface will be shown on your browser. Currently it is an empty QA system. It will initially be empty, a minimal example to get data into the running instance would be:
+Go to http://localhost:8089/quegg/ and the interface will be shown on your browser. It will initially be empty, a minimal example to get data into the running instance would be:
 
 ### Add questions to the QA system
-The file [ExampleHackathonNounPPFrame] (https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv) contains an example of a lexical entry. Download the file.  
+3. 
+a) Download the file containing lexical entries. The file [nounppframe](https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv) contains an example of lexical entry.  
 ```
 wget -O nounppframe.csv https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv
 ```
-3. Add the quetions to the QA system
+b) Post the file to QA system. And questions will appear in the QA system.
 ```
 curl -X "POST" -F "file=@nounppframe.csv" "http://localhost:8089/quegg/import"      
 ```
