@@ -1,55 +1,39 @@
 # Run QA system on your machine
-This page provides instructions on how to run the QA system on your machine and add questions to it. The link of hackathon can be found [Lets go to Quora](https://www.quora.com)
+This page provides instructions on how to run the QA system on your machine and add questions to it. The link of hackathon can be found [here](https://scdemo.techfak.uni-bielefeld.de/qahackathon/index.php/)
 
-### Install term-a-llod on your machine
+### Install QA system on your machine
 Install docker (https://docs.docker.com/engine/install/)
-1. Download the image of term-a-llod. 
+1. Download the image of QA system. 
 ```
-docker pull elahi/term-a-llod:latest
+docker pull agsc/quegg-web:latest
 ```
 2. Run the image as a container.
 ```
-docker run -p 8080:8080 -it elahi/term-a-llod:latest
+docker run -p "8089:8089" -e "QUEGG_ALLOW_UPLOADS=true" agsc/quegg-web:latest
 ```
-Go to http://localhost:8080/status?view=status and the interface will be shown on your browser.
+Go to http://localhost:8089/quegg/ and the interface will be shown on your browser. Currently it is an empty QA system. It will initially be empty, a minimal example to get data into the running instance would be:
 
-### Publish your terminology
-3. Run the following command. Here, *solar.tbx* is the terminology file & *mappings.default* is the mapping file.
+### Write a lexical entry
+3. Downlaod an XSL sheet that contains a lexical entry.
 ```
-curl -X POST --progress-bar \
-    --verbose \
-    -F 'upload=@solar.tbx' \
-    -F 'mapping=@mappings.default' \
-    -F 'graph=tbx2rdf_graph' \
-    -F 'datanamespace=http://tbx2rdf.lider-project.eu/data/YourNameSpace/' \
-    "http://localhost:8080/initialize"
+wget -O nounppframe.csv https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv
 ```
-- Browser: Click the **Browser** button.  You can see the terms in sorted order.  The detail of a term can be seen by clicking it. \
-- Sparql:  Click the **Sparql** button. You can access your terminology through the SPARQL query.
 
-### Link your terminology with other terminology
-4.  Run the following command. Here, the other terminology is *intaglio terminology* (https://webtentacle1.techfak.uni-bielefeld.de/tbx2rdf_intaglio/sparql)
+### Add the questions to the QA system
 ```
-curl -d "endpoint=https://webtentacle1.techfak.uni-bielefeld.de/tbx2rdf_intaglio/sparql" \
-          -H "Content-Type: application/x-www-form-urlencoded" \
-          -X POST "http://localhost:8080/link"      
+curl -X "POST" -F "file=@nounppframe.csv" "http://localhost:8089/quegg/import"      
  ```
-For example, *hole* is a term that exists both in your terminology and other terminology. To view the link, do the followings: 
-- Browser: Click **Browser** button. Select alphabet pair **G_H** and then click the term **hole**. 
-- Auto-completion search: Click **Terms** button and type *ho*. Select the term *hole*. 
-- Sparql: Click **Sparql** button. Write the query for the term *hole* and then Click **Query** button.
-
 Please use the following citation:
 ```
 @inproceedings{Buono-LREC2020,
-	title = {{Terme-`a-LLOD: Simplifying the Conversion and Hosting of TerminologicalResources as Linked Data}},
-	author = {Maria Pia Di Buono, Philipp Cimiano, Mohammad Fazleh Elahi, Frank Grimm},
-	booktitle = {Proceedings of the 7th Workshop on Linked Data in Linguistics (LDL-2020) at Language Resources and Evaluation Conference (LREC 2020)},
-	pages = {28–35},
+	title = {{Generating Grammars from lemon lexica for Questions Answering over Linked Data: a Preliminary Analysis}},
+	author = {Viktoria Benz, Philipp Cimiano, Mohammad Fazleh Elahi, Basil Ell},
+	booktitle = {In: NLIWOD workshop at ISWC 2020},
+	pages = {40–55},
 	year = {2020},
 	location = {Marseille, France},
 	publisher = {Association for Computational Linguistics},
-	link = {https://lrec2020.lrec-conf.org/media/proceedings/Workshops/Books/LDL2020book.pdf}
+	link = {http://ceur-ws.org/Vol-2722/nliwod2020-paper-2.pdf}
 }
 ```
 
@@ -57,6 +41,10 @@ Please use the following citation:
 * **Mohammad Fazleh Elahi**
 * **Frank Grimm**
 ## Supervisors
-* **Maria Pia Di Buono**
-* **Dr. Philipp Cimiano**  
+* **Dr. Philipp Cimiano**
+* **Dr. Basil Ell**
+## Acknowledgement
+* **Viktoria Benz**
+
+  
 
