@@ -22,9 +22,6 @@ Post the file to QA system.
 ```
 curl -X "POST" -F "file=@nounppframe.csv" "http://localhost:8089/quegg/import"      
 ```
-### Test the question
-Go to the http://localhost:8089/quegg/. 
-[<img src="https://github.com/fazleh2010/term-a-llod-demo/blob/master/term-a-llod.png" width="50%">]
 ### Add  more questions to the QA system
    a) add lexical entries at[Google XSL sheet](https://docs.google.com/spreadsheets/d/1NgH7GdFcAqQuYU3ziIXpq0Yybt4lZIR15DpPgaoXF4M/edit?usp=sharing). The guideline of writing a lexical entry for a grammar type can be seen [here](https://scdemo.techfak.uni-bielefeld.de/qahackathon/tutorial/coverage.php#id4). 
    b) Download the Google XSL sheet as csv. File>Download>Comma-seperated values(.csv, currentsheet).
