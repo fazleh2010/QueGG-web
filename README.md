@@ -24,8 +24,8 @@ curl -X "POST" -F "file=@nounppframe.csv" "http://localhost:8089/quegg/import"
 ```
 ### Add  more questions to the QA system
 a) add lexical entry at Google XSL [sheet](https://docs.google.com/spreadsheets/d/1NgH7GdFcAqQuYU3ziIXpq0Yybt4lZIR15DpPgaoXF4M/edit?usp=sharing). The guideline of writing a lexical entry (for a grammar type) can be seen [here](https://scdemo.techfak.uni-bielefeld.de/qahackathon/tutorial/coverage.php#id4).      
-b) download the Google XSL sheet as csv.  File>Download>Comma-separated values(.csv, current sheet).
-c) repeat step 3. The questions of newly added lexical entry will be   visible in QA system.
+b) download the Google XSL sheet as csv.  File>Download>Comma-separated values [.csv, current sheet].\
+c) repeat step 3. The questions of newly added lexical entry will be visible in QA system.
 
 Please use the following citation:
 ```
