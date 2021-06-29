@@ -13,16 +13,18 @@ docker run -p "8089:8089" -e "QUEGG_ALLOW_UPLOADS=true" agsc/quegg-web:latest
 ```
 Go to http://localhost:8089/quegg/ and the interface will be shown on your browser. Currently it is an empty QA system. It will initially be empty, a minimal example to get data into the running instance would be:
 
-### Write a lexical entry
-3. Downlaod an XSL sheet that contains a lexical entry.
+### Add questions to the QA system
+Write a lexical entry and each lexical entry will generate questions. The guideline of writing a lexical entry is shown [here](https://scdemo.techfak.uni-bielefeld.de/qahackathon/tutorial/coverage.php#id4).
+The file https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv contains an example of lexical entry for NounPPFrame.
+3. Download the csv file
 ```
 wget -O nounppframe.csv https://raw.githubusercontent.com/ag-sc/QueGG-web/main/example/nounppframe.csv
 ```
-
-### Add the questions to the QA system
+4. send post command to add the quetions to the QA system
 ```
 curl -X "POST" -F "file=@nounppframe.csv" "http://localhost:8089/quegg/import"      
  ```
+
 Please use the following citation:
 ```
 @inproceedings{Buono-LREC2020,
@@ -31,8 +33,6 @@ Please use the following citation:
 	booktitle = {In: NLIWOD workshop at ISWC 2020},
 	pages = {40–55},
 	year = {2020},
-	location = {Marseille, France},
-	publisher = {Association for Computational Linguistics},
 	link = {http://ceur-ws.org/Vol-2722/nliwod2020-paper-2.pdf}
 }
 ```
