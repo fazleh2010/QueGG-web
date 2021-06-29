@@ -1,7 +1,5 @@
-# Publish and link your terminology
-This page provides instructions on how to run the term-a-llod tool to publish and link your terminology. The user guide can be seen from the following video
-
-[<img src="https://github.com/fazleh2010/term-a-llod-demo/blob/master/term-a-llod.png" width="50%">](https://www.youtube.com/watch?v=PInCQvnpYh0)
+# Run QA system on your machine
+This page provides instructions on how to run the QA system on your machine and add questions to it. The link of hackathon can be found [Lets go to Quora](https://www.quora.com)
 
 ### Install term-a-llod on your machine
 Install docker (https://docs.docker.com/engine/install/)
