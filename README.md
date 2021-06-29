@@ -42,10 +42,10 @@ Please use the following citation:
 ## Developers
 * **Mohammad Fazleh Elahi**
 * **Frank Grimm**
-## Supervisors
+### Supervisors:
 * **Dr. Philipp Cimiano**
 * **Dr. Basil Ell**
-## Acknowledgement
+### Acknowledgement
 * **Viktoria Benz**
 
   
