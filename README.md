@@ -23,9 +23,7 @@ Post the file
 curl -X "POST" -F "file=@nounppframe.csv" "http://localhost:8089/quegg/import"      
 ```
 ### Add  more questions to the QA system
-Go to http://localhost:8089/quegg/ and the interface will be shown on your browser. It will initially be empty, a minimal example to get data into the running instance would be:
-
-    a) add lexical entries in [Google XSL sheet](https://docs.google.com/spreadsheets/d/1NgH7GdFcAqQuYU3ziIXpq0Yybt4lZIR15DpPgaoXF4M/edit?usp=sharing). The guideline of writing a lexical entry (for a grammar type) can be seen [here](https://scdemo.techfak.uni-bielefeld.de/qahackathon/tutorial/coverage.php#id4).      
+a) Add lexical entry at Google XSL [sheet](https://docs.google.com/spreadsheets/d/1NgH7GdFcAqQuYU3ziIXpq0Yybt4lZIR15DpPgaoXF4M/edit?usp=sharing). The guideline of writing a lexical entry (for a grammar type) can be seen [here](https://scdemo.techfak.uni-bielefeld.de/qahackathon/tutorial/coverage.php#id4).      
 
 
 Please use the following citation:
